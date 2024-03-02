@@ -9,18 +9,23 @@ nvd_id = os.getenv("NVD_ID")
 
 query = """
 {
-      securityVulnerabilities(first: 10, ecosystem: HASKELL) {
-        nodes {
-          advisory {
-            summary
-            identifiers {
-              type
-              value
-            }
+      securityVulnerabilities(last: 5) {
+      nodes {
+        package {
+          name
+        }
+        advisory {
+          ghsaId
+          summary
+          description
+          severity
+          references {
+            url
           }
         }
       }
     }
+  }
 
 """
 
