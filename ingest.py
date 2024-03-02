@@ -13,6 +13,10 @@ query = """
     ghsaId
     summary
     description
+    severity
+    references {
+            url
+          }
   }
 }
 """
