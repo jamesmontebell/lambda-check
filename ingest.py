@@ -8,14 +8,9 @@ api_key = os.getenv("API_KEY")
 nvd_id = os.getenv("NVD_ID")
 
 ghsa_id = ['GHSA-75rw-34q6-72cr', 'GHSA-r5mv-3cq3-727q', 'GHSA-mgm6-c25g-557g', 'GHSA-w6w5-x32x-cg2w', 'GHSA-4q83-8359-v5v3']#Biscuit
-#ghsa_id1 = 'GHSA-r5mv-3cq3-727q'#xml-condiut
-#ghsa_id2 = 'GHSA-mgm6-c25g-557g'#vscode
-#ghsa_id3 = 'GHSA-w6w5-x32x-cg2w'#dynamiclog
-#ghsa_id4 = 'GHSA-4q83-8359-v5v3'#basic constraints
+
 my_dict = {}
-#list of arrays
-#for loop to go through each one 
-#Big data dictionary to hold the data for each one that is appended on "global data dictionary"
+
 for value in ghsa_id:
   response = requests.get(
     f'https://api.github.com/advisories/{value}',
@@ -32,4 +27,16 @@ for key, value in my_dict.items():
   for k, v in value.items():
     print(k)
   break
-  
+
+nvd_data = None
+
+response = requests.get(
+  url= 'https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=haskell',
+)
+
+if response.status_code == 200:
+  nvd_data = response.json()
+else:
+  print('Error:', response.status_code, response.reason)
+
+print(nvd_data)
