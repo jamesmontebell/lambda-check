@@ -30,7 +30,7 @@
         <div class="bg-gray-200 p-4 rounded-md">Identifies unsafe thread practices ✅</div>
     </div>
     <div class='mb-4'>
-        <div class='font-bold;/.'>Categories: </div>
+        <div class='font-bold'>Categories: </div>
         <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Bank_of_America_logo.svg/1440px-Bank_of_America_logo.svg.png' class="mb-3"/> 
         <div>We felt that the Bank of America - Financial Hack category presented us with the opprotunity to tackle an ever present and relevant issue in software, that issue being security.</div>
         <br/>
