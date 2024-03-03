@@ -48,9 +48,13 @@ for cve in github_list:
     "summary" : cve["summary"],
     "description" : cve["description"],
   }
+  if cve["vulnerabilities"] == []:
+    github_dict[str(count)]["package_name"] = "package"
+    github_dict[str(count)]["version"] = "version"
   for v in cve["vulnerabilities"]:
     github_dict[str(count)]["package_name"] = v["package"]["name"]
     github_dict[str(count)]["version"] = v["vulnerable_version_range"]
+
   count += 1
 
 # print(github_dict)
@@ -76,4 +80,37 @@ for cve in nvd["vulnerabilities"]:
   nvd_dict[str(count)]["summary"] = nvd_dict[str(count)]["description"][:45] + "..."
   count += 1
 
-print(nvd_dict)
+# print(nvd_dict)
+
+
+conn = sqlite3.connect('haskVul.db')
+cursor = conn.cursor()
+cursor.execute(''' DROP TABLE packageVul ''')
+cursor.execute(''' CREATE TABLE IF NOT EXISTS packageVul(
+    cve_id TEXT,
+    Severity TEXT,
+    html_url TEXT,
+    summary TEXT,
+    cve_description TEXT,
+    package_name TEXT,
+    version_range TEXT
+) ''')
+
+for k, v in github_dict.items():
+
+    strang = "INSERT INTO packageVul (cve_id, severity, html_url, summary, cve_description, package_name, version_range) VALUES (?, ?, ?, ?, ?, ?, ?)"
+    #cursor = conn.cursor()
+    values = (v['cve_id'], v["severity"], v["html_url"], v["summary"], v["description"], v["package_name"], v["version"])
+    cursor.execute(strang, values)
+    conn.commit()
+
+for k, v in nvd_dict.items():
+
+    strang = "INSERT INTO packageVul (cve_id, severity, html_url, summary, cve_description, package_name, version_range) VALUES (?, ?, ?, ?, ?, ?, ?)"
+    #cursor = conn.cursor()
+    values = (v['cve_id'], v["severity"], v["html_url"], v["summary"], v["description"], v["package_name"], v["version"])
+    cursor.execute(strang, values)
+    conn.commit()
+
+cursor.close()
+conn.close()
