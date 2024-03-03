@@ -1,0 +1,859 @@
+{
+  "ghsa_id": "GHSA-75rw-34q6-72cr",
+  "cve_id": "CVE-2022-31053",
+  "url": "https://api.github.com/advisories/GHSA-75rw-34q6-72cr",
+  "html_url": "https://github.com/advisories/GHSA-75rw-34q6-72cr",
+  "summary": "Signature forgery in Biscuit",
+  "description": "### Impact\n\nThe paper [Cryptanalysis of Aggregate Γ-Signature and Practical Countermeasures in Application to Bitcoin](https://eprint.iacr.org/2020/1484) defines a way to forge valid Γ-signatures, an algorithm that is used in the Biscuit specification version 1.\nIt would allow an attacker to create a token with any access level.\n\nAs Biscuit v1 was still an early version and not broadly deployed, we were able to contact all known users of Biscuit v1 and help them migrate to Biscuit v2.\nWe are not aware of any active exploitation of this vulnerability.\n\n### Patches\n\nThe version 2 of the specification mandates a different algorithm than gamma signatures and as such is not affected by this vulnerability. The Biscuit implementations in Rust, Haskell, Go, Java and Javascript all have published versions following the v2 specification.\n\n### Workarounds\n\nThere is no known workaround, any use of Biscuit v1 should be migrated to v2.\n\n### References\n[Cryptanalysis of Aggregate Γ-Signature and Practical Countermeasures in Application to Bitcoin](https://eprint.iacr.org/2020/1484)\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Open an issue in [biscuit-auth/biscuit](https://github.com/biscuit-auth/biscuit)\n* Ask questions on [Matrix](https://matrix.to/#/#biscuit-auth:matrix.org)\n",
+  "type": "reviewed",
+  "severity": "critical",
+  "repository_advisory_url": "https://api.github.com/repos/biscuit-auth/biscuit/security-advisories/GHSA-75rw-34q6-72cr",
+  "source_code_location": "https://github.com/biscuit-auth/biscuit",
+  "identifiers": [
+    {
+      "value": "GHSA-75rw-34q6-72cr",
+      "type": "GHSA"
+    },
+    {
+      "value": "CVE-2022-31053",
+      "type": "CVE"
+    }
+  ],
+  "references": [
+    "https://github.com/biscuit-auth/biscuit/security/advisories/GHSA-75rw-34q6-72cr",
+    "https://nvd.nist.gov/vuln/detail/CVE-2022-31053",
+    "https://eprint.iacr.org/2020/1484",
+    "https://pkg.go.dev/vuln/GO-2022-0564",
+    "https://github.com/advisories/GHSA-75rw-34q6-72cr"
+  ],
+  "published_at": "2022-06-17T00:38:03Z",
+  "updated_at": "2023-03-07T00:39:39Z",
+  "github_reviewed_at": "2022-06-17T00:38:03Z",
+  "nvd_published_at": "2022-06-13T20:15:00Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [
+    {
+      "package": {
+        "ecosystem": "rust",
+        "name": "biscuit-auth"
+      },
+      "vulnerable_version_range": ">= 1.0.0, < 2.0.0",
+      "first_patched_version": "2.0.0",
+      "vulnerable_functions": []
+    },
+    {
+      "package": {
+        "ecosystem": "maven",
+        "name": "com.clever-cloud:biscuit-java"
+      },
+      "vulnerable_version_range": "< 2.0.0",
+      "first_patched_version": "2.0.0",
+      "vulnerable_functions": []
+    },
+    {
+      "package": {
+        "ecosystem": "go",
+        "name": "github.com/biscuit-auth/biscuit-go"
+      },
+      "vulnerable_version_range": "< 2.0.0",
+      "first_patched_version": "2.0.0",
+      "vulnerable_functions": []
+    }
+  ],
+  "cvss": {
+    "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "score": 9.8
+  },
+  "cwes": [
+    {
+      "cwe_id": "CWE-347",
+      "name": "Improper Verification of Cryptographic Signature"
+    }
+  ],
+  "credits": [
+    {
+      "user": {
+        "login": "avivdolev",
+        "id": 19855814,
+        "node_id": "MDQ6VXNlcjE5ODU1ODE0",
+        "avatar_url": "https://avatars.githubusercontent.com/u/19855814?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/avivdolev",
+        "html_url": "https://github.com/avivdolev",
+        "followers_url": "https://api.github.com/users/avivdolev/followers",
+        "following_url": "https://api.github.com/users/avivdolev/following{/other_user}",
+        "gists_url": "https://api.github.com/users/avivdolev/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/avivdolev/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/avivdolev/subscriptions",
+        "organizations_url": "https://api.github.com/users/avivdolev/orgs",
+        "repos_url": "https://api.github.com/users/avivdolev/repos",
+        "events_url": "https://api.github.com/users/avivdolev/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/avivdolev/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "type": "analyst"
+    },
+    {
+      "user": {
+        "login": "Churro",
+        "id": 343448,
+        "node_id": "MDQ6VXNlcjM0MzQ0OA==",
+        "avatar_url": "https://avatars.githubusercontent.com/u/343448?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/Churro",
+        "html_url": "https://github.com/Churro",
+        "followers_url": "https://api.github.com/users/Churro/followers",
+        "following_url": "https://api.github.com/users/Churro/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Churro/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/Churro/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Churro/subscriptions",
+        "organizations_url": "https://api.github.com/users/Churro/orgs",
+        "repos_url": "https://api.github.com/users/Churro/repos",
+        "events_url": "https://api.github.com/users/Churro/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/Churro/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "type": "analyst"
+    }
+  ]
+}
+{
+  "ghsa_id": "GHSA-r5mv-3cq3-727q",
+  "cve_id": "CVE-2021-4249",
+  "url": "https://api.github.com/advisories/GHSA-r5mv-3cq3-727q",
+  "html_url": "https://github.com/advisories/GHSA-r5mv-3cq3-727q",
+  "summary": "A vulnerability was found in xml-conduit. It has been classified as problematic. Affected is an u...",
+  "description": "A vulnerability was found in xml-conduit. It has been classified as problematic. Affected is an unknown function of the file xml-conduit/src/Text/XML/Stream/Parse.hs of the component DOCTYPE Entity Expansion Handler. The manipulation leads to infinite loop. It is possible to launch the attack remotely. Upgrading to version 1.9.1.0 is able to address this issue. The name of the patch is 4be1021791dcdee8b164d239433a2043dc0939ea. It is recommended to upgrade the affected component. The identifier of this vulnerability is VDB-216204.",
+  "type": "unreviewed",
+  "severity": "high",
+  "repository_advisory_url": null,
+  "source_code_location": "",
+  "identifiers": [
+    {
+      "value": "GHSA-r5mv-3cq3-727q",
+      "type": "GHSA"
+    },
+    {
+      "value": "CVE-2021-4249",
+      "type": "CVE"
+    }
+  ],
+  "references": [
+    "https://nvd.nist.gov/vuln/detail/CVE-2021-4249",
+    "https://github.com/snoyberg/xml/pull/161",
+    "https://github.com/snoyberg/xml/commit/4be1021791dcdee8b164d239433a2043dc0939ea",
+    "https://hackage.haskell.org/package/xml-conduit-1.9.1.0",
+    "https://vuldb.com/?id.216204",
+    "https://github.com/advisories/GHSA-r5mv-3cq3-727q"
+  ],
+  "published_at": "2022-12-18T15:30:17Z",
+  "updated_at": "2023-01-31T05:01:03Z",
+  "github_reviewed_at": null,
+  "nvd_published_at": "2022-12-18T15:15:00Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [],
+  "cvss": {
+    "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+    "score": 7.5
+  },
+  "cwes": [
+    {
+      "cwe_id": "CWE-404",
+      "name": "Improper Resource Shutdown or Release"
+    }
+  ],
+  "credits": []
+}
+{
+  "ghsa_id": "GHSA-mgm6-c25g-557g",
+  "cve_id": "CVE-2021-30502",
+  "url": "https://api.github.com/advisories/GHSA-mgm6-c25g-557g",
+  "html_url": "https://github.com/advisories/GHSA-mgm6-c25g-557g",
+  "summary": "The unofficial vscode-ghc-simple (aka Simple Glasgow Haskell Compiler) extension before 0.2.3 for...",
+  "description": "The unofficial vscode-ghc-simple (aka Simple Glasgow Haskell Compiler) extension before 0.2.3 for Visual Studio Code allows remote code execution via a crafted workspace configuration with replCommand.",
+  "type": "unreviewed",
+  "severity": "critical",
+  "repository_advisory_url": null,
+  "source_code_location": "",
+  "identifiers": [
+    {
+      "value": "GHSA-mgm6-c25g-557g",
+      "type": "GHSA"
+    },
+    {
+      "value": "CVE-2021-30502",
+      "type": "CVE"
+    }
+  ],
+  "references": [
+    "https://nvd.nist.gov/vuln/detail/CVE-2021-30502",
+    "https://github.com/dramforever/vscode-ghc-simple/commit/bc7f6f0b857dade46ea51496d8bd1a4edef39b46",
+    "https://github.com/dramforever/vscode-ghc-simple/blob/master/CHANGELOG.md#v023",
+    "https://github.com/dramforever/vscode-ghc-simple/releases",
+    "https://vuln.ryotak.me/advisories/38",
+    "https://github.com/advisories/GHSA-mgm6-c25g-557g"
+  ],
+  "published_at": "2022-05-24T17:48:44Z",
+  "updated_at": "2023-01-29T05:06:05Z",
+  "github_reviewed_at": null,
+  "nvd_published_at": "2021-04-25T03:15:00Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [],
+  "cvss": {
+    "vector_string": null,
+    "score": null
+  },
+  "cwes": [],
+  "credits": []
+}
+{
+  "ghsa_id": "GHSA-w6w5-x32x-cg2w",
+  "cve_id": "CVE-2013-1436",
+  "url": "https://api.github.com/advisories/GHSA-w6w5-x32x-cg2w",
+  "html_url": "https://github.com/advisories/GHSA-w6w5-x32x-cg2w",
+  "summary": "The XMonad.Hooks.DynamicLog module in xmonad-contrib before 0.11.2 allows remote attackers to exe...",
+  "description": "The XMonad.Hooks.DynamicLog module in xmonad-contrib before 0.11.2 allows remote attackers to execute arbitrary commands via a web page title, which activates the commands when the user clicks on the xmobar window title, as demonstrated using an action tag.",
+  "type": "unreviewed",
+  "severity": "high",
+  "repository_advisory_url": null,
+  "source_code_location": "",
+  "identifiers": [
+    {
+      "value": "GHSA-w6w5-x32x-cg2w",
+      "type": "GHSA"
+    },
+    {
+      "value": "CVE-2013-1436",
+      "type": "CVE"
+    }
+  ],
+  "references": [
+    "https://nvd.nist.gov/vuln/detail/CVE-2013-1436",
+    "http://handra.rampa.sk/dawb/patch?repoPURL=http%3A%2F%2Fcode.haskell.org%2FXMonadContrib&repoPHash=20130708144813-1499c-0c3e284d3523c0694b9423714081761813bc1e89",
+    "http://security.gentoo.org/glsa/glsa-201405-28.xml",
+    "http://www.openwall.com/lists/oss-security/2013/07/26/5",
+    "http://www.securityfocus.com/bid/61491",
+    "https://github.com/advisories/GHSA-w6w5-x32x-cg2w"
+  ],
+  "published_at": "2022-05-17T04:31:37Z",
+  "updated_at": "2023-01-28T05:02:00Z",
+  "github_reviewed_at": null,
+  "nvd_published_at": "2014-10-06T23:55:00Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [],
+  "cvss": {
+    "vector_string": null,
+    "score": null
+  },
+  "cwes": [
+    {
+      "cwe_id": "CWE-94",
+      "name": "Improper Control of Generation of Code ('Code Injection')"
+    }
+  ],
+  "credits": []
+}
+{
+  "ghsa_id": "GHSA-4q83-8359-v5v3",
+  "cve_id": "CVE-2013-0243",
+  "url": "https://api.github.com/advisories/GHSA-4q83-8359-v5v3",
+  "html_url": "https://github.com/advisories/GHSA-4q83-8359-v5v3",
+  "summary": "haskell-tls-extra before 0.6.1 has Basic Constraints attribute vulnerability may lead to Man in t...",
+  "description": "haskell-tls-extra before 0.6.1 has Basic Constraints attribute vulnerability may lead to Man in the Middle attacks on TLS connections",
+  "type": "unreviewed",
+  "severity": "unknown",
+  "repository_advisory_url": null,
+  "source_code_location": "",
+  "identifiers": [
+    {
+      "value": "GHSA-4q83-8359-v5v3",
+      "type": "GHSA"
+    },
+    {
+      "value": "CVE-2013-0243",
+      "type": "CVE"
+    }
+  ],
+  "references": [
+    "https://nvd.nist.gov/vuln/detail/CVE-2013-0243",
+    "https://access.redhat.com/security/cve/cve-2013-0243",
+    "https://security-tracker.debian.org/tracker/CVE-2013-0243",
+    "http://www.openwall.com/lists/oss-security/2013/01/30/6",
+    "https://github.com/advisories/GHSA-4q83-8359-v5v3"
+  ],
+  "published_at": "2022-05-05T00:29:08Z",
+  "updated_at": "2023-02-01T05:01:51Z",
+  "github_reviewed_at": null,
+  "nvd_published_at": "2019-12-05T16:15:00Z",
+  "withdrawn_at": null,
+  "vulnerabilities": [],
+  "cvss": {
+    "vector_string": null,
+    "score": null
+  },
+  "cwes": [],
+  "credits": []
+}
+{
+  "resultsPerPage": 4,
+  "startIndex": 0,
+  "totalResults": 4,
+  "format": "NVD_CVE",
+  "version": "2.0",
+  "timestamp": "2024-03-02T23:40:14.250",
+  "vulnerabilities": [
+    {
+      "cve": {
+        "id": "CVE-2013-0243",
+        "sourceIdentifier": "secalert@redhat.com",
+        "published": "2019-12-05T16:15:10.317",
+        "lastModified": "2019-12-17T21:59:00.563",
+        "vulnStatus": "Analyzed",
+        "descriptions": [
+          {
+            "lang": "en",
+            "value": "haskell-tls-extra before 0.6.1 has Basic Constraints attribute vulnerability may lead to Man in the Middle attacks on TLS connections"
+          },
+          {
+            "lang": "es",
+            "value": "haskell-tls-extra versiones anteriores a 0.6.1, presenta una vulnerabilidad del atributo Basic Constraints lo que puede conllevar a ataques de tipo Man in the Middle en conexiones TLS."
+          }
+        ],
+        "metrics": {
+          "cvssMetricV31": [
+            {
+              "source": "nvd@nist.gov",
+              "type": "Primary",
+              "cvssData": {
+                "version": "3.1",
+                "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+                "attackVector": "NETWORK",
+                "attackComplexity": "HIGH",
+                "privilegesRequired": "NONE",
+                "userInteraction": "NONE",
+                "scope": "UNCHANGED",
+                "confidentialityImpact": "HIGH",
+                "integrityImpact": "HIGH",
+                "availabilityImpact": "NONE",
+                "baseScore": 7.4,
+                "baseSeverity": "HIGH"
+              },
+              "exploitabilityScore": 2.2,
+              "impactScore": 5.2
+            }
+          ],
+          "cvssMetricV2": [
+            {
+              "source": "nvd@nist.gov",
+              "type": "Primary",
+              "cvssData": {
+                "version": "2.0",
+                "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:N",
+                "accessVector": "NETWORK",
+                "accessComplexity": "MEDIUM",
+                "authentication": "NONE",
+                "confidentialityImpact": "PARTIAL",
+                "integrityImpact": "PARTIAL",
+                "availabilityImpact": "NONE",
+                "baseScore": 5.8
+              },
+              "baseSeverity": "MEDIUM",
+              "exploitabilityScore": 8.6,
+              "impactScore": 4.9,
+              "acInsufInfo": false,
+              "obtainAllPrivilege": false,
+              "obtainUserPrivilege": false,
+              "obtainOtherPrivilege": false,
+              "userInteractionRequired": false
+            }
+          ]
+        },
+        "weaknesses": [
+          {
+            "source": "nvd@nist.gov",
+            "type": "Primary",
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-20"
+              }
+            ]
+          }
+        ],
+        "configurations": [
+          {
+            "nodes": [
+              {
+                "operator": "OR",
+                "negate": false,
+                "cpeMatch": [
+                  {
+                    "vulnerable": true,
+                    "criteria": "cpe:2.3:a:haskell:hs-tls:*:*:*:*:*:*:*:*",
+                    "versionEndExcluding": "0.6.1",
+                    "matchCriteriaId": "C72A5646-66AA-4901-AD93-816637507E81"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "references": [
+          {
+            "url": "http://www.openwall.com/lists/oss-security/2013/01/30/6",
+            "source": "secalert@redhat.com",
+            "tags": [
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://access.redhat.com/security/cve/cve-2013-0243",
+            "source": "secalert@redhat.com",
+            "tags": [
+              "Broken Link"
+            ]
+          },
+          {
+            "url": "https://security-tracker.debian.org/tracker/CVE-2013-0243",
+            "source": "secalert@redhat.com",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "cve": {
+        "id": "CVE-2021-30502",
+        "sourceIdentifier": "cve@mitre.org",
+        "published": "2021-04-25T03:15:07.203",
+        "lastModified": "2021-05-07T16:24:40.550",
+        "vulnStatus": "Analyzed",
+        "descriptions": [
+          {
+            "lang": "en",
+            "value": "The unofficial vscode-ghc-simple (aka Simple Glasgow Haskell Compiler) extension before 0.2.3 for Visual Studio Code allows remote code execution via a crafted workspace configuration with replCommand."
+          },
+          {
+            "lang": "es",
+            "value": "La extensión no oficial vscode-ghc-simple (también se conoce como Simple Glasgow Haskell Compiler) versiones anteriores a 0.2.3 para Visual Studio Code, permite una ejecución de código remota por medio de una configuración de workspace diseñada con replCommand"
+          }
+        ],
+        "metrics": {
+          "cvssMetricV31": [
+            {
+              "source": "nvd@nist.gov",
+              "type": "Primary",
+              "cvssData": {
+                "version": "3.1",
+                "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                "attackVector": "NETWORK",
+                "attackComplexity": "LOW",
+                "privilegesRequired": "NONE",
+                "userInteraction": "NONE",
+                "scope": "UNCHANGED",
+                "confidentialityImpact": "HIGH",
+                "integrityImpact": "HIGH",
+                "availabilityImpact": "HIGH",
+                "baseScore": 9.8,
+                "baseSeverity": "CRITICAL"
+              },
+              "exploitabilityScore": 3.9,
+              "impactScore": 5.9
+            }
+          ],
+          "cvssMetricV2": [
+            {
+              "source": "nvd@nist.gov",
+              "type": "Primary",
+              "cvssData": {
+                "version": "2.0",
+                "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+                "accessVector": "NETWORK",
+                "accessComplexity": "LOW",
+                "authentication": "NONE",
+                "confidentialityImpact": "PARTIAL",
+                "integrityImpact": "PARTIAL",
+                "availabilityImpact": "PARTIAL",
+                "baseScore": 7.5
+              },
+              "baseSeverity": "HIGH",
+              "exploitabilityScore": 10.0,
+              "impactScore": 6.4,
+              "acInsufInfo": false,
+              "obtainAllPrivilege": false,
+              "obtainUserPrivilege": false,
+              "obtainOtherPrivilege": false,
+              "userInteractionRequired": false
+            }
+          ]
+        },
+        "weaknesses": [
+          {
+            "source": "nvd@nist.gov",
+            "type": "Primary",
+            "description": [
+              {
+                "lang": "en",
+                "value": "NVD-CWE-noinfo"
+              }
+            ]
+          }
+        ],
+        "configurations": [
+          {
+            "nodes": [
+              {
+                "operator": "OR",
+                "negate": false,
+                "cpeMatch": [
+                  {
+                    "vulnerable": true,
+                    "criteria": "cpe:2.3:a:simple_glasgow_haskell_compiler_project:simple_glasgow_haskell_compiler:*:*:*:*:*:visual_studio_code:*:*",
+                    "versionEndExcluding": "0.2.3",
+                    "matchCriteriaId": "9D3FBB49-FB1A-4DCA-89BE-B6766DC21DD4"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "references": [
+          {
+            "url": "https://github.com/dramforever/vscode-ghc-simple/blob/master/CHANGELOG.md#v023",
+            "source": "cve@mitre.org",
+            "tags": [
+              "Release Notes",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://github.com/dramforever/vscode-ghc-simple/commit/bc7f6f0b857dade46ea51496d8bd1a4edef39b46",
+            "source": "cve@mitre.org",
+            "tags": [
+              "Patch",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://github.com/dramforever/vscode-ghc-simple/releases",
+            "source": "cve@mitre.org",
+            "tags": [
+              "Release Notes",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://vuln.ryotak.me/advisories/38",
+            "source": "cve@mitre.org",
+            "tags": [
+              "Third Party Advisory"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "cve": {
+        "id": "CVE-2022-31053",
+        "sourceIdentifier": "security-advisories@github.com",
+        "published": "2022-06-13T20:15:07.820",
+        "lastModified": "2023-11-07T03:47:29.910",
+        "vulnStatus": "Modified",
+        "descriptions": [
+          {
+            "lang": "en",
+            "value": "Biscuit is an authentication and authorization token for microservices architectures. The Biscuit specification version 1 contains a vulnerable algorithm that allows malicious actors to forge valid Γ-signatures. Such an attack would allow an attacker to create a token with any access level. The version 2 of the specification mandates a different algorithm than gamma signatures and as such is not affected by this vulnerability. The Biscuit implementations in Rust, Haskell, Go, Java and Javascript all have published versions following the v2 specification. There are no known workarounds for this issue."
+          },
+          {
+            "lang": "es",
+            "value": "Biscuit es un token de autenticación y autorización para arquitecturas de microservicios. La versión 1 de la especificación de Biscuit contiene un algoritmo vulnerable que permite a actores maliciosos falsificar firmas válidas. Un ataque de este tipo permitiría a un atacante crear un token con cualquier nivel de acceso. La versión 2 de la especificación impone un algoritmo diferente a las firmas gamma y, como tal, no está afectada por esta vulnerabilidad. Las implementaciones de Biscuit en Rust, Haskell, Go, Java y Javascript han publicado versiones que siguen la especificación v2. No se presentan mitigaciones conocidas para este problema"
+          }
+        ],
+        "metrics": {
+          "cvssMetricV31": [
+            {
+              "source": "nvd@nist.gov",
+              "type": "Primary",
+              "cvssData": {
+                "version": "3.1",
+                "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                "attackVector": "NETWORK",
+                "attackComplexity": "LOW",
+                "privilegesRequired": "NONE",
+                "userInteraction": "NONE",
+                "scope": "UNCHANGED",
+                "confidentialityImpact": "HIGH",
+                "integrityImpact": "HIGH",
+                "availabilityImpact": "HIGH",
+                "baseScore": 9.8,
+                "baseSeverity": "CRITICAL"
+              },
+              "exploitabilityScore": 3.9,
+              "impactScore": 5.9
+            },
+            {
+              "source": "security-advisories@github.com",
+              "type": "Secondary",
+              "cvssData": {
+                "version": "3.1",
+                "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                "attackVector": "NETWORK",
+                "attackComplexity": "LOW",
+                "privilegesRequired": "NONE",
+                "userInteraction": "NONE",
+                "scope": "UNCHANGED",
+                "confidentialityImpact": "HIGH",
+                "integrityImpact": "HIGH",
+                "availabilityImpact": "HIGH",
+                "baseScore": 9.8,
+                "baseSeverity": "CRITICAL"
+              },
+              "exploitabilityScore": 3.9,
+              "impactScore": 5.9
+            }
+          ],
+          "cvssMetricV2": [
+            {
+              "source": "nvd@nist.gov",
+              "type": "Primary",
+              "cvssData": {
+                "version": "2.0",
+                "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+                "accessVector": "NETWORK",
+                "accessComplexity": "LOW",
+                "authentication": "NONE",
+                "confidentialityImpact": "PARTIAL",
+                "integrityImpact": "PARTIAL",
+                "availabilityImpact": "PARTIAL",
+                "baseScore": 7.5
+              },
+              "baseSeverity": "HIGH",
+              "exploitabilityScore": 10.0,
+              "impactScore": 6.4,
+              "acInsufInfo": false,
+              "obtainAllPrivilege": false,
+              "obtainUserPrivilege": false,
+              "obtainOtherPrivilege": false,
+              "userInteractionRequired": false
+            }
+          ]
+        },
+        "weaknesses": [
+          {
+            "source": "security-advisories@github.com",
+            "type": "Primary",
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-347"
+              }
+            ]
+          }
+        ],
+        "configurations": [
+          {
+            "nodes": [
+              {
+                "operator": "OR",
+                "negate": false,
+                "cpeMatch": [
+                  {
+                    "vulnerable": true,
+                    "criteria": "cpe:2.3:a:biscuitsec:biscuit-auth:*:*:*:*:*:rust:*:*",
+                    "versionStartIncluding": "1.0.0",
+                    "versionEndIncluding": "1.1.0",
+                    "matchCriteriaId": "0E563805-9EDE-4DF0-82CB-869AD67AC574"
+                  },
+                  {
+                    "vulnerable": true,
+                    "criteria": "cpe:2.3:a:biscuitsec:biscuit-go:*:*:*:*:*:*:*:*",
+                    "versionEndExcluding": "2.0.0",
+                    "matchCriteriaId": "3D442EFC-06BF-429F-848C-7BF4B7438BEB"
+                  },
+                  {
+                    "vulnerable": true,
+                    "criteria": "cpe:2.3:a:biscuitsec:biscuit-haskell:0.1.1.0:*:*:*:*:*:*:*",
+                    "matchCriteriaId": "3E24AA7F-9A5F-4032-BE61-BD0B4AB77465"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodes": [
+              {
+                "operator": "OR",
+                "negate": false,
+                "cpeMatch": [
+                  {
+                    "vulnerable": true,
+                    "criteria": "cpe:2.3:a:clever-cloud:biscuit-java:*:*:*:*:*:*:*:*",
+                    "versionEndExcluding": "2.0.0",
+                    "matchCriteriaId": "020BC888-E2CE-4B88-A043-F7EE3DC54A62"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "references": [
+          {
+            "url": "https://eprint.iacr.org/2020/1484",
+            "source": "security-advisories@github.com",
+            "tags": [
+              "Exploit",
+              "Technical Description",
+              "Third Party Advisory"
+            ]
+          },
+          {
+            "url": "https://github.com/biscuit-auth/biscuit/security/advisories/GHSA-75rw-34q6-72cr",
+            "source": "security-advisories@github.com",
+            "tags": [
+              "Exploit",
+              "Third Party Advisory"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "cve": {
+        "id": "CVE-2023-35936",
+        "sourceIdentifier": "security-advisories@github.com",
+        "published": "2023-07-05T21:15:09.627",
+        "lastModified": "2024-02-01T14:08:22.863",
+        "vulnStatus": "Analyzed",
+        "descriptions": [
+          {
+            "lang": "en",
+            "value": "Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library. Starting in version 1.13 and prior to version 3.1.4, Pandoc is susceptible to an arbitrary file write vulnerability, which can be triggered by providing a specially crafted image element in the input when generating files using the `--extract-media` option or outputting to PDF format. This vulnerability allows an attacker to create or overwrite arbitrary files on the system ,depending on the privileges of the process running pandoc. It only affects systems that pass untrusted user input to pandoc and allow pandoc to be used to produce a PDF or with the `--extract-media` option.\n\nThe fix is to unescape the percent-encoding prior to checking that the resource is not above the working directory, and prior to extracting the extension.  Some code for checking that the path is below the working directory was flawed in a similar way and has also been fixed. Note that the `--sandbox` option, which only affects IO done by readers and writers themselves, does not block this vulnerability. The vulnerability is patched in pandoc 3.1.4. As a workaround, audit the pandoc command and disallow PDF output and the `--extract-media` option.\n"
+          }
+        ],
+        "metrics": {
+          "cvssMetricV31": [
+            {
+              "source": "nvd@nist.gov",
+              "type": "Primary",
+              "cvssData": {
+                "version": "3.1",
+                "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:L",
+                "attackVector": "LOCAL",
+                "attackComplexity": "HIGH",
+                "privilegesRequired": "LOW",
+                "userInteraction": "REQUIRED",
+                "scope": "UNCHANGED",
+                "confidentialityImpact": "NONE",
+                "integrityImpact": "HIGH",
+                "availabilityImpact": "LOW",
+                "baseScore": 5.0,
+                "baseSeverity": "MEDIUM"
+              },
+              "exploitabilityScore": 0.8,
+              "impactScore": 4.2
+            },
+            {
+              "source": "security-advisories@github.com",
+              "type": "Secondary",
+              "cvssData": {
+                "version": "3.1",
+                "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:C/C:N/I:H/A:L",
+                "attackVector": "LOCAL",
+                "attackComplexity": "HIGH",
+                "privilegesRequired": "LOW",
+                "userInteraction": "REQUIRED",
+                "scope": "CHANGED",
+                "confidentialityImpact": "NONE",
+                "integrityImpact": "HIGH",
+                "availabilityImpact": "LOW",
+                "baseScore": 6.1,
+                "baseSeverity": "MEDIUM"
+              },
+              "exploitabilityScore": 0.8,
+              "impactScore": 4.7
+            }
+          ]
+        },
+        "weaknesses": [
+          {
+            "source": "security-advisories@github.com",
+            "type": "Primary",
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-20"
+              }
+            ]
+          },
+          {
+            "source": "nvd@nist.gov",
+            "type": "Secondary",
+            "description": [
+              {
+                "lang": "en",
+                "value": "NVD-CWE-noinfo"
+              }
+            ]
+          }
+        ],
+        "configurations": [
+          {
+            "nodes": [
+              {
+                "operator": "OR",
+                "negate": false,
+                "cpeMatch": [
+                  {
+                    "vulnerable": true,
+                    "criteria": "cpe:2.3:a:pandoc:pandoc:*:*:*:*:*:*:*:*",
+                    "versionStartIncluding": "1.13",
+                    "versionEndExcluding": "3.1.4",
+                    "matchCriteriaId": "F644A7E2-E96C-4252-AD53-7CEFD3C01C37"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nodes": [
+              {
+                "operator": "OR",
+                "negate": false,
+                "cpeMatch": [
+                  {
+                    "vulnerable": true,
+                    "criteria": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                    "matchCriteriaId": "07B237A9-69A3-4A9C-9DA0-4E06BD37AE73"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "references": [
+          {
+            "url": "https://github.com/jgm/pandoc/security/advisories/GHSA-xj5q-fv23-575g",
+            "source": "security-advisories@github.com",
+            "tags": [
+              "Exploit",
+              "Vendor Advisory"
+            ]
+          },
+          {
+            "url": "https://lists.debian.org/debian-lts-announce/2023/07/msg00029.html",
+            "source": "security-advisories@github.com",
+            "tags": [
+              "Mailing List",
+              "Third Party Advisory"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
