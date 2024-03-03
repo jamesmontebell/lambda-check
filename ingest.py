@@ -10,6 +10,10 @@ nvd_id = os.getenv("NVD_ID")
 
 ghsa_id = ['GHSA-75rw-34q6-72cr', 'GHSA-r5mv-3cq3-727q', 'GHSA-mgm6-c25g-557g', 'GHSA-w6w5-x32x-cg2w', 'GHSA-4q83-8359-v5v3']#Biscuit
 
+
+
+
+
 def get_github(id):
   response = requests.get(
     f'https://api.github.com/advisories/{id}',
