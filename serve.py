@@ -9,7 +9,7 @@ conn = sqlite3.connect('haskVul.db')
 async def search_items(term: str = None):
     if term:
         cursor = conn.cursor()
-        query = f"SELECT summary, Severity FROM packageVul WHERE cve_description LIKE '%{term}%'"
+        query = f"SELECT summary, Severity FROM packageVul WHERE cve_description LIKE '%{term}%' OR summary LIKE '%{term}%'"
         cursor.execute(query)
         conn.commit()
         results = cursor.fetchone()
