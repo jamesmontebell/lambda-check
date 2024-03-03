@@ -27,7 +27,7 @@
         <div class="bg-gray-200 p-4 rounded-md">Flags potential segmentation faults  ✅</div>
         <div class="bg-gray-200 p-4 rounded-md">Identifies unsafe thread practices ✅</div>
     </div>
-    <div>
+    <div class='mb-4'>
         <div class='font-bold;/.'>Categories: </div>
         <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Bank_of_America_logo.svg/1440px-Bank_of_America_logo.svg.png' class="mb-3"/> 
         <div>We felt that the Bank of America - Financial Hack category presented us with the opprotunity to tackle an ever present and relevant issue in software, that issue being security.</div>
@@ -39,7 +39,33 @@
         Our tool offers developers the ability to check their third party package vulnerabilities, their program's thread safety and their program's memory/buffer overflow. ✨
         <div>
     </div>
-</div>
+    <div class="rounded-md mt-4 grid grid-cols-2 gap-4">
+        <ul class='bg-gray-200 p-4 '>
+            <div>Features 🍩:</div>
+            <div class="pl-4">
+                <li>CLI tool (lambda-check) </li>
+                <li>Up to date CVE's<l/i>
+                <li>Error line numbers</li>
+                <li>Checks all .cabal & .hs files</li>
+                <li>File by file output</li>
+                <li>Colored output</li>
+            </div>
+        </ul>
+        <ul class='bg-gray-200 p-4 '>
+            <div>Technology used 🤓:</div>
+            <div class="pl-4">
+                <li>Haskell</li>
+                <li>Python</li>
+                <li>FastAPI</li>
+                <li>SQLite</li>
+                <li>Rest API</li>
+            </div>
+        </ul>
+    </div>
+    <div>
+        <div>Screenshots 📸:
+        <img src='893AF19A-09DD-4049-8205-94218F5AA301.jpeg'>
+    </div>
 
 </body>
 </html>
