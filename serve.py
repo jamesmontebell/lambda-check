@@ -5,7 +5,7 @@ app = FastAPI()
 conn = sqlite3.connect('haskVul.db')
 
 
-@app.get("/search/")
+@app.get("/h/search/")
 async def search_items(term: str = None):
     if term:
         cursor = conn.cursor()
