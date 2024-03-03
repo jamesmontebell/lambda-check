@@ -5,7 +5,7 @@ app = FastAPI()
 conn = sqlite3.connect('haskVul.db')
 
 
-@app.get("/h/search/")
+@app.get("/search/")
 async def search_items(term: str = None):
     if term:
         cursor = conn.cursor()
@@ -28,4 +28,4 @@ async def search_items(term: str = None):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="localhost", port=8005)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
