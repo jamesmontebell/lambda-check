@@ -17,7 +17,7 @@
 <div class="container mx-auto p-4">
     <div class="flex flex-col justify-center items-center">
         <h1 class="text-3xl font-bold text-center uppercase text-purple-900">Lambda Check</h1>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/2560px-Haskell-Logo.svg.png" class="w-14 mb-4">
+        <div class='w-10'><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/2560px-Haskell-Logo.svg.png" class="w-14 mb-4"></div>
     </div>
     <div class="flex">
         <p class="text-xl text-gray-700">a Haskell audit security tool 🛡️ that...</p>
