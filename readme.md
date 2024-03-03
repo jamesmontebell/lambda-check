@@ -9,14 +9,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown with Tailwind CSS</title>
     <!-- Include Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-slate-500>
 
 <div class="container mx-auto p-4">
-    <!-- Markdown content with Tailwind CSS classes -->
     <div class="flex flex-col justify-center items-center">
         <h1 class="text-3xl font-bold text-center uppercase text-purple-900">Lambda Check</h1>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/2560px-Haskell-Logo.svg.png" class="w-14 mb-4">
