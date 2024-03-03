@@ -43,7 +43,7 @@ count = 0
 for cve in github_list:
   github_dict[str(count)] = {
     "cve_id" : cve["cve_id"],
-    "severity" : cve["severity"],
+    "severity" : cve["severity"].upper(),
     "html_url" : cve["html_url"],
     "summary" : cve["summary"],
     "description" : cve["description"],
@@ -71,7 +71,7 @@ for cve in nvd["vulnerabilities"]:
       break
     
   for d in cve["cve"]["metrics"]["cvssMetricV31"]:
-    nvd_dict[str(count)]["severity"] = d["cvssData"]["baseSeverity"]
+    nvd_dict[str(count)]["severity"] = d["cvssData"]["baseSeverity"].upper()
     nvd_dict[str(count)]["version"] = d["cvssData"]["version"]
   
   
