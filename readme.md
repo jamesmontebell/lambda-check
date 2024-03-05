@@ -64,8 +64,10 @@
             </div>
         </ul>
     </div>
+        <div class="font-bold">How to use:</div>
+    </div>
     <div>
-        <div>Screenshots 📸:
+        <div class='font-bold'>Screenshots 📸:
         <img src='893AF19A-09DD-4049-8205-94218F5AA301.jpeg'>
     </div>
 
